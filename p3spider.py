@@ -10,6 +10,9 @@ soup=BeautifulSoup(result.text,'lxml')
 title=soup.find_all('div') 
 
 for i in title:
-    if i.find('span'):
-        result2=i.find('span','article-meta-tag')
+    if i.find('span','article-meta-tag'):
+        result2=i.find('span','article-meta-tag').text
         print(result2)
+    if i.find('span','article-meta-value'):
+        result5=i.find('span','article-meta-value').text
+        print(result5)
